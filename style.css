@@ -1,0 +1,22 @@
+/* o root, é um seletor do css que representa o elemento raiz(root) do documento. O elemento raiz é o HTML. Usamos esse elemento para definir variaveis globais (propriedades customizadas) que podem ser reutilizadas em todo o site. */
+:root {
+    --fonte-primaria: "Poppins", sans-serif;
+    /* Cores */
+    --cor-texto-primaria: #1f1f1f;
+    --cor-texto-secundaria: #ffffff;
+
+    --bg-primairo: #ffffff;
+    --bg-secundario: #f1f1f1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    font-family: var(--fonte-primaria);
+    background-color: var(--bg-primairo);
+}
