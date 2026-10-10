@@ -5,6 +5,10 @@
     --cor-texto-primaria: #1f1f1f;
     --cor-texto-secundaria: #ffffff;
 
+    --cor-borda: #bbbbbb;
+    --cor-overlay: #0000008d;
+    --cor-gradient: linear-gradient(to right , #34495E, #3498DB);
+
     --bg-primairo: #ffffff;
     --bg-secundario: #f1f1f1;
 }
@@ -19,4 +23,82 @@
 body {
     font-family: var(--fonte-primaria);
     background-color: var(--bg-primairo);
+}
+
+.visuallyhidden {
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+    margin: -1px;
+    white-space: nowrap;
+    position: absolute;
+    overflow: hidden;
+    clip-path: inset(50%);
+}
+
+.lancamento {
+    background-color: aqua;
+    height: 80dvh;
+    background-image: url("img/predio3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.contador {
+    background-color: var(--cor-overlay);
+    height: 100%;
+    color: var(--cor-texto-secundaria);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contador div p{
+    text-align: center;
+    text-shadow: 2px 2px 10px #000000;
+}
+
+.contador div p:first-child{
+    font-size: 2rem;
+    font-weight: 700;    
+
+}
+
+.novidades {
+    height: 80dvh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    text-align: center;
+    padding: .5rem;
+
+    background-color: var(--bg-primairo);
+}
+
+.novidades h2{
+    font-size: 3rem;
+    background: var(--cor-gradient);
+    background-clip: text;
+    color: transparent;
+}
+
+.novidades h2 + p{
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1rem;
+}
+
+.novidades p + p{
+    max-width: 75ch;
+}
+
+img {
+    max-width: 100%;
 }
