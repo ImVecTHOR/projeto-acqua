@@ -7,7 +7,7 @@
 
     --cor-borda: #bbbbbb;
     --cor-overlay: #0000008d;
-    --cor-gradient: linear-gradient(to right , #34495E, #3498DB);
+    --cor-gradient: linear-gradient(to right, #34495E, #3498DB);
 
     --bg-primairo: #ffffff;
     --bg-secundario: #f1f1f1;
@@ -37,9 +37,14 @@ body {
     clip-path: inset(50%);
 }
 
+.lancamento,
+.novidades {
+    height: 95dvh;
+    width: 100%;
+}
+
 .lancamento {
-    background-color: aqua;
-    height: 80dvh;
+    /* height: 80dvh; */
     background-image: url("img/predio3.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -56,20 +61,18 @@ body {
     justify-content: space-evenly;
 }
 
-.contador div p{
+.contador div p {
     text-align: center;
     text-shadow: 2px 2px 10px #000000;
 }
 
-.contador div p:first-child{
+.contador div p:first-child {
     font-size: 2rem;
-    font-weight: 700;    
-
+    font-weight: 700;
 }
 
 .novidades {
-    height: 80dvh;
-
+    /* height: 80dvh; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -82,23 +85,122 @@ body {
     background-color: var(--bg-primairo);
 }
 
-.novidades h2{
+.novidades h2 {
     font-size: 3rem;
     background: var(--cor-gradient);
     background-clip: text;
     color: transparent;
 }
 
-.novidades h2 + p{
+.novidades h2+p {
     font-weight: 600;
     font-style: italic;
     font-size: 1rem;
 }
 
-.novidades p + p{
+.novidades p+p {
     max-width: 75ch;
 }
 
+.novidades form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    width: 100%;
+    max-width: 25.5rem;
+}
+
+input,
+button {
+    height: 3rem;
+    border-radius: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+input {
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--cor-borda);
+}
+
+button {
+    background: var(--cor-gradient);
+    color: var(--cor-texto-secundaria);
+    border: 0;
+    font-weight: 500;
+}
+
+.andamento {
+    padding: 4.75rem 0.875rem;
+    /* padding: top right bottom left */
+    text-align: center;
+}
+
+.andamento h2 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: .25rem;
+}
+
+.andamento p {
+    font-weight: 400;
+    font-size: 1rem;
+    margin-bottom: 1.75rem;
+}
+
+.andamento ul {
+    display: grid;
+    gap: .875rem;
+}
+
+/* remover provisorio */
 img {
-    max-width: 100%;
+    width: 100%;
+    transition: transform 300ms cubic-bezier(1, 0, 0, 1);
+    /* transition: propriedade tempo animação; */
+}
+
+img:hover{
+    transform: scale(0.95);
+}
+
+@media(min-width: 500px) {
+    ul {
+        grid-template-columns: 1fr 1fr;
+
+    }
+}
+
+@media(min-width: 744px) {
+    .novidades h2 {
+        font-size: 3.375rem;
+    }
+
+    .novidades h2+p {
+        font-size: 1.25rem;
+    }
+
+    ul {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media(min-width: 1080px) {
+    .container {
+        display: flex;
+    }
+
+    .andamento{
+        padding-top: 8rem;
+    }
+
+    .andamento h2{
+        font-size: 3rem;
+    }
+
+    .andamento p{
+        font-size: 1.25rem;
+    }
 }
